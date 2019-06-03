@@ -21,6 +21,20 @@ class App extends React.Component{
         
   }
 
+  makeWeathers = () => {
+    let foo = [];
+       for(let i=0;i<=40;i+=7){
+              let bar = <WeatherContainer key={i}
+                temp={this.state.weather[i].main.temp}
+                date={this.state.weather[i].dt_txt}
+                cond={this.state.weather[i].weather[0].description}
+                imgLink={`http://openweathermap.org/img/w/${this.state.weather[i].weather[0].icon}.png`}
+                />
+              foo.push(bar);
+        }
+        return foo;
+  }
+
   render(){
     //this.state.loaded ? console.log(this.state.weather[0].coud.description):console.log('not loaded');
     
@@ -30,41 +44,7 @@ class App extends React.Component{
           <div>
           <TopMenu/>
             <div style={{display:'flex',justifyContent:'center'}}>
-              <WeatherContainer
-                temp={this.state.weather[0].main.temp}
-                date={this.state.weather[0].dt_txt}
-                cond={this.state.weather[0].weather[0].description}
-                imgLink={`http://openweathermap.org/img/w/${this.state.weather[0].weather[0].icon}.png`}
-                  >
-              </WeatherContainer>
-              <WeatherContainer
-                temp={this.state.weather[7].main.temp}
-                date={this.state.weather[7].dt_txt}
-                cond={this.state.weather[7].weather[0].description}
-                imgLink={`http://openweathermap.org/img/w/${this.state.weather[7].weather[0].icon}.png`}
-                  >
-              </WeatherContainer>
-              <WeatherContainer
-                temp={this.state.weather[15].main.temp}
-                date={this.state.weather[15].dt_txt}
-                cond={this.state.weather[15].weather[0].description}
-                imgLink={`http://openweathermap.org/img/w/${this.state.weather[15].weather[0].icon}.png`}
-                  >
-              </WeatherContainer>
-              <WeatherContainer
-                temp={this.state.weather[23].main.temp}
-                date={this.state.weather[23].dt_txt}
-                cond={this.state.weather[23].weather[0].description}
-                imgLink={`http://openweathermap.org/img/w/${this.state.weather[23].weather[0].icon}.png`}
-                  >
-              </WeatherContainer>
-              <WeatherContainer
-                temp={this.state.weather[31].main.temp}
-                date={this.state.weather[31].dt_txt}
-                cond={this.state.weather[31].weather[0].description}
-                imgLink={`http://openweathermap.org/img/w/${this.state.weather[31].weather[0].icon}.png`}
-                  >
-              </WeatherContainer>
+            {this.makeWeathers()}
             </div>  
           </div>
           :<h1>Loading...</h1> 
