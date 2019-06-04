@@ -6,6 +6,8 @@
     line-height: 200%;
     font-size: 30px
 }
-WeatherContainer{
-    
+.right{
+    position: absolute;
+    right:0;
+    top:12px;
 }

@@ -1,10 +1,15 @@
 import React from 'react';
 import './compStyle.css';
+import {Link} from 'react-router-dom';
 
-function TopMenu() {
+function TopMenu({cityName}) {
   return (
     <div className="topMenu">
-      Weather in Cleveland
+
+      Weather in {cityName}
+      <div style={{ position: "absolute",right:"375px",top:"2px"}}>Enter City ID:</div>
+      
+      <input type="text" className="right"></input>
     </div>
   );
 }
