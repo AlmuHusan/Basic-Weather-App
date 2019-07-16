@@ -20,7 +20,7 @@ class App extends React.Component{
         this.fetchData();
   }
   fetchData =async()=>{
-    const response= await axios.get(`http://api.openweathermap.org/data/2.5/forecast?id=${this.state.cityID}&appid=82e0d8aed7dc21b28e07e22ce21a9b7a`);
+    const response= await axios.get(`http://api.openweathermap.org/data/2.5/forecast?id=${this.state.cityID}&appid=8444a6c59c19a84fc0151e985030dd68`);
     console.log(response.data.city.name);
     const data=response.data.list;
     this.setState({loaded:true,weather:data, city:response.data.city.name});
