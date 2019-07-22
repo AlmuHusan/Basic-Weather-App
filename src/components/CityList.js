@@ -20,7 +20,7 @@ class CityList extends React.Component {
   }
   retCity= ()=>{
     let foo=[];
-    for(let i=0;i<json.length/1000;i++){
+    for(let i=0;i<json.length;i++){
       let city=(<div style={{textAlign:'center', color:'(0,0,0)'}}><a key={i} >City: {json[i].name},{json[i].country} ID: {json[i].id} </a><br/></div>);
       foo.push(city);
     }
