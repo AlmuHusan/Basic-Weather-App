@@ -26,3 +26,12 @@ steps:
   displayName: 'Publish Artifact: drop'
   inputs:
     PathtoPublish: '$(build.artifactstagingdirectory)'
+- task: CopyFiles@2
+  inputs:
+    #sourceFolder: # Optional
+    #contents: '**' 
+    targetFolder: '$(build.artifactstagingdirectory)'
+    #cleanTargetFolder: false # Optional
+    #overWrite: false # Optional
+    #flattenFolders: false # Optional
+    #preserveTimestamp: false # Optional
